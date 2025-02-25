@@ -2,10 +2,11 @@
 __pycache__/
 *.py[cod]
 *$py.class
-
+.vscode/
 # C extensions
 *.so
 
+*.DS_Store
 # Distribution / packaging
 .Python
 build/
@@ -169,3 +170,5 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+week1-2/.DS_Store
+.gitignore
