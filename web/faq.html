@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ - Designing Large Scale AI Systems</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>FAQ</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html#announcements">Announcements</a></li>
+          <li><a href="index.html#schedule">Schedule</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <h3>How do I submit assignments?</h3>
+        <p>
+          Assignments are submitted through Gradescope. See the syllabus for submission guidelines.
+        </p>
+      </div>
+      <div class="faq-item">
+        <h3>What is the late policy?</h3>
+        <p>
+          You have 6 late days for the quarter (max 2 per assignment). After that, penalties apply.
+        </p>
+      </div>
+      <div class="faq-item">
+        <h3>Where can I find lecture notes?</h3>
+        <p>
+          Lecture notes and slides are provided in the schedule section. Each lecture entry includes links to slides and additional notes.
+        </p>
+      </div>
+      <!-- Add more FAQ items as needed -->
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Designing Large Scale AI Systems. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // FAQ Toggle Functionality for FAQ page
+    document.addEventListener("DOMContentLoaded", function () {
+      const faqItems = document.querySelectorAll(".faq-item h3");
+      faqItems.forEach((item) => {
+        item.addEventListener("click", function () {
+          const answer = this.nextElementSibling;
+          answer.style.display = answer.style.display === "block" ? "none" : "block";
+        });
+      });
+    });
+  </script>
+</body>
+</html>
