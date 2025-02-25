@@ -1,147 +1,154 @@
 /* Reset & Global Styles */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #fff;
-  }
-  
-  /* Container for centering content */
-  .container {
-    width: 90%;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  /* Header */
-  header {
-    background-color: #3735a5; /* Stanford-inspired red */
-    color: #fff;
-    padding: 20px 0;
-    margin-bottom: 20px;
-  }
-  
-  header h1 {
-    text-align: center;
-    margin-bottom: 10px;
-  }
-  
-  header p {
-    text-align: center;
-    font-size: 1.1em;
-    margin-bottom: 15px;
-  }
-  
-  nav ul {
-    list-style: none;
-    text-align: center;
-  }
-  
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+}
+
+/* Container for centering content */
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header */
+header {
+  background-color: #a51c30; /* Stanford-inspired red */
+  color: #fff;
+  padding: 20px 0;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+header p {
+  text-align: center;
+  font-size: 1.1em;
+  margin-bottom: 15px;
+}
+
+nav ul {
+  list-style: none;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Sections */
+section {
+  margin-bottom: 40px;
+}
+
+section h2 {
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+/* Announcements */
+#announcements ul {
+  list-style: none;
+}
+
+#announcements li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Schedule Cards */
+.schedule-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.schedule-card {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 15px;
+  flex: 1 1 300px; /* Minimum width 300px, then grow */
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.schedule-card h3 {
+  margin-bottom: 10px;
+  color: #a51c30;
+}
+
+.schedule-field {
+  margin-bottom: 8px;
+}
+
+.schedule-field strong {
+  display: inline-block;
+  width: 80px;
+}
+
+/* FAQ styles are similar to previous ones */
+.faq-item {
+  margin-bottom: 20px;
+}
+
+.faq-item h3 {
+  cursor: pointer;
+  background-color: #f4f4f4;
+  padding: 10px;
+  margin-bottom: 5px;
+}
+
+.faq-item p {
+  padding: 10px;
+  display: none; /* Collapsed by default; toggled via JS */
+}
+
+/* Contact */
+#contact a {
+  color: #a51c30;
+  text-decoration: none;
+}
+
+#contact a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  background-color: #f4f4f4;
+  padding: 20px 0;
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
   nav ul li {
-    display: inline-block;
-    margin: 0 10px;
+    display: block;
+    margin: 5px 0;
   }
-  
-  nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  nav ul li a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Sections */
-  section {
-    margin-bottom: 40px;
-  }
-  
-  section h2 {
-    border-bottom: 2px solid #ccc;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-  }
-  
-  /* Announcements */
-  #announcements ul {
-    list-style: none;
-  }
-  
-  #announcements li {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  /* Schedule Table */
-  .table-container {
-    overflow-x: auto;
-  }
-  
-  #schedule table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-  }
-  
-  #schedule th,
-  #schedule td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-  }
-  
-  #schedule th {
-    background-color: #f4f4f4;
-  }
-  
-  /* FAQ */
-  .faq-item {
-    margin-bottom: 20px;
-  }
-  
-  .faq-item h3 {
-    cursor: pointer;
-    background-color: #f4f4f4;
-    padding: 10px;
-    margin-bottom: 5px;
-  }
-  
-  .faq-item p {
-    padding: 10px;
-    display: none; /* Collapsed by default; toggled via JS */
-  }
-  
-  /* Contact */
-  #contact a {
-    color: #6a1ca5;
-    text-decoration: none;
-  }
-  
-  #contact a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Footer */
-  footer {
-    background-color: #f4f4f4;
-    padding: 20px 0;
-    text-align: center;
-    margin-top: 40px;
-  }
-  
-  /* Responsive Styles */
-  @media (max-width: 600px) {
-    nav ul li {
-      display: block;
-      margin: 5px 0;
-    }
-  }
-  
+}
