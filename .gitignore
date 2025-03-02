@@ -5,8 +5,8 @@ __pycache__/
 .vscode/
 # C extensions
 *.so
-
-model_eval/
+old/
+# model_eval/
 .DS_Store
 # Distribution / packaging
 .Python
