@@ -3,10 +3,12 @@ __pycache__/
 *.py[cod]
 *$py.class
 .vscode/
+private/
 # C extensions
 *.so
 old/
 worksheets/
+.env
 # model_eval/
 .DS_Store
 # Distribution / packaging
