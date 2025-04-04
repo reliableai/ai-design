@@ -92,22 +92,29 @@
     </div>
 
     <div class="section">
-        <h2>Section 2: Beta Distribution for Modeling ML Accuracy</h2>
-
-        <h3>3. Theoretical Foundation</h3>
+        <h2>More on Classification Metrics</h2>
         <ol type="a">
-            <li>Describe the beta distribution and explain why it is suitable for modeling the accuracy of a machine learning classifier. Include its probability density function and parameters.</li>
+            <li>Describe the beta distribution and explain why it is suitable for modeling the accuracy of a machine learning classifier. Describe its parameters.</li>
             <li>How do the shape parameters (α and β) of the beta distribution relate to the number of correct and incorrect predictions?</li>
+
         </ol>
 
-        <h3>4. Practical Application</h3>
-        <p>Suppose you have a classifier that was tested on 100 samples, with 80 correct predictions and 20 incorrect predictions.</p>
+        <h3>3. Practical Application</h3>
+        <p>Suppose you have a classifier that was tested on 10 samples, with 8 correct predictions and 2 incorrect predictions.</p>
         <ol type="a">
             <li>Model the classifier’s accuracy using a beta distribution. Specify the parameters α and β, and write the corresponding probability density function.</li>
             <li>Compute the expected value (mean) and variance of this beta distribution. Interpret what these values tell you about the classifier’s performance.</li>
             <li>Using this beta distribution, calculate the probability that the classifier’s true accuracy is greater than 0.85. (You may leave your answer in terms of an integral or use a statistical table if provided.)</li>
-            <li>If you were to collect 50 more samples and the classifier achieved 45 correct predictions, how would the beta distribution parameters update? What does this suggest about the stability of the classifier’s accuracy?</li>
+            <li>If you were to collect 5 more samples and the classifier achieved 4 correct predictions, how would the beta distribution parameters update? What does this suggest about the stability of the classifier’s accuracy?</li>
+            <li>I have tested a classifier over 10 different customers, and i have measured an accuracy of 0.7. Now I have a new customer. How should I think about testing the classifier on the new customer? How many examples are "enough"? </li>
+            <li>Somebody gives you 100 000 data points. You have to train and test a binary classifier. How do you decide your train/test split </li>
+
         </ol>
+        <h3>Fairness</h3>
+        <p>Suppose you have a classifier that determines if people are likely to repay a loan. The classifiers outputs a score for each person.
+            Given a classification, you have TP, TN, FP, FN. What are some criteria you can define to measure if the classifier is fair across groups of interest?
+            How would you approach this problem? What are some potential challenges?
+        </p>
     </div>
 
     <div class="section">
