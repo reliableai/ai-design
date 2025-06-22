@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
       // If header fails to load, create a basic header
       const basicHeader = `
         <header>
-          <h1>Sherlock Holmes Investigative Course</h1>
+          <h1>Designing Large Scale AI Systems</h1>
           <nav>
             <ul>
               <li><a href="index.html">Home</a></li>
