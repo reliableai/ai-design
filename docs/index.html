@@ -1,87 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Design - Home</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Designing Large Scale AI Systems - Spring 2026</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Header will be loaded dynamically via JavaScript -->
-  
+  <!-- Header loaded dynamically -->
+
   <main>
-    <h2>Welcome :) </h2>
-    <p>In this immersive course, students step into the shoes of great engineers and creator to practice the art of building valuable probabilistic systems.</p>
+    <h1>Designing Large Scale AI Systems</h1>
+    <p class="text-muted">Spring 2026</p>
 
-    <div id="announcement">
-      <!-- <strong>Announcement:</strong> Please signup for this class at: 
-      <a href="https://forms.gle/NWE5kRhi8QL2Hq9z7">Student Signup form</a>
-      <button id="ann-close">Hide</button> -->
-      <!-- <p> <a href="https://tinyurl.com/aitn25">Exam signup for june 9</a></p> -->
+    <div class="announcement">
+      <div class="announcement-content">
+        <strong>Student Registration:</strong> The signup link will be published on the first lesson.
+      </div>
+      <button class="close-btn" aria-label="Close">&times;</button>
     </div>
 
+    <h2>Course Overview</h2>
+    <p>
+      This course teaches you how to design, build, and evaluate large-scale AI systems.
+      You'll start by building a simple AI-powered application, then dive deep into evaluation
+      methodologies, and finally apply everything in a hands-on project.
+    </p>
 
-    
-    <h3>Upcoming Sessions</h3>
-    <div class="table-container">
-      Content will be posted after the class and updated as we progresses
-      
-      <table>
-        <thead>
-          <tr>
-            <th>Week</th>
-            <th>Topic</th>
-            <th>Readings</th>
-            <!-- <th>Links</th> -->
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Week 1-2</td>
-            <td>Intro to AI Models and Model Eval</td>
-            <td><em>Deep dive into llm</em>, <a href = 'https://www.youtube.com/watch?v=7xTGNNLPyMI&t=17s'>
-            Video</a> <p>
-            <em>Evaluation of traditional ML models (from MLVU)</em>,
-             <a href = 'https://github.com/reliableai/ai-design/blob/main/model_eval/model_eval_mlvu.pdf'>
-            pdf</a> <p>
-            <em>Compas analysis</em>, 
-            <a href = 'https://github.com/reliableai/ai-design/tree/main/compas/'>
-            git folder</a> <p>
+    <h3>Three Phases</h3>
+    <ul>
+      <li><span class="phase phase-1">Phase 1</span> <strong>Lessons 1-3:</strong> Building a simple AI app (agents, tools, memory, MCP-style connectors)</li>
+      <li><span class="phase phase-2">Phase 2</span> <strong>Lessons 4-10:</strong> Evaluation of AI systems (core theory + hands-on)</li>
+      <li><span class="phase phase-3">Phase 3</span> <strong>Lessons 11-24:</strong> Project-driven work (reviews, meetings, presentations)</li>
+    </ul>
 
+    <h2>Weekly Schedule</h2>
+    <p class="text-muted text-small">12 weeks, 24 lessons (two 2-hour lessons per week)</p>
 
-            </p>
-            
-            </td>
-            <!-- add another line in this cell -->
-             
-            <!-- <td><a href="#">Slides</a></td> -->
-          </tr>
-          <tr>
-            <td>Week 3-4</td>
-            <td>Eval metrics at work</td>
-            <!-- <td>"The Science of Deduction" (excerpt)</td> -->
-            <td><a href="eval/clustering_metrics.md">Clustering metrics</a><p>
-              <a href="https://chrispiech.github.io/probabilityForComputerScientists/en/">CS109 Course Chapter on Beta distribution only</a>
-              
-            </td>
-          </tr>
-          <td>Week 5-12</td>
-          <td>AI Agents and Projects</td>
-          
-          <td>
-            <a href="https://www.anthropic.com/engineering/building-effective-agents">Building effective agents</a> <p></p>
-            <a href="https://www.kaggle.com/whitepaper-agent-companion">Evaluating AI agents and applications</a><p>
-            <a href="https://learn.deeplearning.ai/courses/mcp-build-rich-context-ai-apps-with-anthropic/lesson/fkbhh/introduction">Using tools: Anthropic class on MCP</a><p></p>
-          </td>
+    <table>
+      <thead>
+        <tr>
+          <th>Week</th>
+          <th>Topic</th>
+          <th>Lessons</th>
         </tr>
-        </tbody>
-      </table>
+      </thead>
+      <tbody>
+        <!-- Phase 1 -->
+        <tr class="week-header">
+          <td colspan="3"><span class="phase phase-1">Phase 1</span> Building an AI-Powered App</td>
+        </tr>
+        <tr>
+          <td><strong>1</strong></td>
+          <td>
+            <div class="lesson-title">Bootstrapping an AI-Powered App</div>
+            <div class="lesson-desc">Hello Software 3.0, OpenRouter Chat Service, Tools & Agent Loop</div>
+          </td>
+          <td>L1, L2</td>
+        </tr>
+        <tr>
+          <td><strong>2</strong></td>
+          <td>
+            <div class="lesson-title">Memory & Starting Evaluation</div>
+            <div class="lesson-desc">Memory, MCP-Style Connectors, Optional Voice, Evaluation Fundamentals</div>
+          </td>
+          <td>L3, L4</td>
+        </tr>
+
+        <!-- Phase 2 -->
+        <tr class="week-header">
+          <td colspan="3"><span class="phase phase-2">Phase 2</span> Evaluation of AI Systems</td>
+        </tr>
+        <tr>
+          <td><strong>3</strong></td>
+          <td>
+            <div class="lesson-title">Metrics & Golden Datasets I</div>
+            <div class="lesson-desc">Metrics & Rating Schemes, Golden Datasets Design & First Slice</div>
+          </td>
+          <td>L5, L6</td>
+        </tr>
+        <tr>
+          <td><strong>4</strong></td>
+          <td>
+            <div class="lesson-title">Golden Datasets II & LLM-as-Judge</div>
+            <div class="lesson-desc">Dataset Refinement & Peer Review, LLM-as-Judge & Evaluation Harness</div>
+          </td>
+          <td>L7, L8</td>
+        </tr>
+        <tr>
+          <td><strong>5</strong></td>
+          <td>
+            <div class="lesson-title">Experimental Design, Error Analysis & Uncertainty</div>
+            <div class="lesson-desc">Experimental Design & Ablations, Error Analysis & Uncertainty</div>
+          </td>
+          <td>L9, L10</td>
+        </tr>
+        <tr>
+          <td><strong>6</strong></td>
+          <td>
+            <div class="lesson-title">Architecture & Project Kick-off</div>
+            <div class="lesson-desc">Architectures for AI Systems, Track Selection & Project Specification</div>
+          </td>
+          <td>L11, L12</td>
+        </tr>
+
+        <!-- Phase 3 -->
+        <tr class="week-header">
+          <td colspan="3"><span class="phase phase-3">Phase 3</span> Project-Driven Work</td>
+        </tr>
+        <tr>
+          <td><strong>7</strong></td>
+          <td>
+            <div class="lesson-title">Midterm & First Project Review</div>
+            <div class="lesson-desc">Midterm Written Exam (Individual), Project Review Meeting #1</div>
+          </td>
+          <td>L13, L14</td>
+        </tr>
+        <tr>
+          <td><strong>8</strong></td>
+          <td>
+            <div class="lesson-title">Deep Project Working Sessions</div>
+            <div class="lesson-desc">Implementation Focus, Evaluation Focus</div>
+          </td>
+          <td>L15, L16</td>
+        </tr>
+        <tr>
+          <td><strong>9</strong></td>
+          <td>
+            <div class="lesson-title">Mid-Project Presentations & Design Clinic</div>
+            <div class="lesson-desc">Internal Demo, Breakout Meetings for Architecture/Evaluation/Safety</div>
+          </td>
+          <td>L17, L18</td>
+        </tr>
+        <tr>
+          <td><strong>10</strong></td>
+          <td>
+            <div class="lesson-title">Final Implementation Push</div>
+            <div class="lesson-desc">Integration & Hardening, Final Evaluation Runs</div>
+          </td>
+          <td>L19, L20</td>
+        </tr>
+        <tr>
+          <td><strong>11</strong></td>
+          <td>
+            <div class="lesson-title">Final Reports & Presentation Prep</div>
+            <div class="lesson-desc">Results & Storytelling Review, Presentation Rehearsals</div>
+          </td>
+          <td>L21, L22</td>
+        </tr>
+        <tr>
+          <td><strong>12</strong></td>
+          <td>
+            <div class="lesson-title">Final Presentations & Retrospective</div>
+            <div class="lesson-desc">Final Presentations (Graded), Course Retrospective</div>
+          </td>
+          <td>L23, L24</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Assessments</h2>
+    <div class="card-grid">
+      <div class="card assessment-card">
+        <h3>Midterm Exam</h3>
+        <p>Individual written exam covering Weeks 1-6 material: agents, tools, memory, evaluation fundamentals, metrics, and LLM-as-judge.</p>
+        <div class="assessment-meta">
+          <span>Week 7</span>
+          <span>Individual</span>
+        </div>
+      </div>
+      <div class="card assessment-card project">
+        <h3>Course Project</h3>
+        <p>Build and evaluate a large-scale AI system. Choose Track A (class system) or Track B (capstone). Final presentation in Week 12.</p>
+        <div class="assessment-meta">
+          <span>Weeks 6-12</span>
+          <span>Teams of 1-2</span>
+        </div>
+      </div>
     </div>
 
-    <!-- <p><a href="schedule.html">View full schedule &rarr;</a></p> -->
+    <p><a href="assessments.html" class="btn">View Assessment Details</a></p>
   </main>
+
+  <footer>
+    <p>Designing Large Scale AI Systems &middot; Spring 2026</p>
+  </footer>
 
   <script src="scripts.js"></script>
 </body>
 </html>
-<!-- https://tinyurl.com/trento-ai -->

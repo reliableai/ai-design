@@ -1,65 +1,75 @@
-document.addEventListener('DOMContentLoaded', function() {
-  // Load and insert the header
-  fetch('header.html')
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Failed to load header');
-      }
-      return response.text();
-    })
-    .then(data => {
-      // Find the main element
-      const mainElement = document.querySelector('main');
-      // Insert the header before the main element
-      if (mainElement) {
-        mainElement.insertAdjacentHTML('beforebegin', data);
-      } else {
-        document.body.insertAdjacentHTML('afterbegin', data);
-      }
-      
-      // Set active state for current page
-      const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-      const navLinks = document.querySelectorAll('nav a');
-      navLinks.forEach(link => {
-        if (link.getAttribute('href') === currentPage) {
-          link.classList.add('active');
-        }
-      });
-    })
-    .catch(error => {
-      console.error('Error loading header:', error);
-      // If header fails to load, create a basic header
-      const basicHeader = `
-        <header>
-          <h1>Designing Large Scale AI Systems</h1>
-          <nav>
-            <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="schedule.html">Schedule</a></li>
-              <li><a href="syllabus.html">Syllabus</a></li>
-              <li><a href="assignments.html">Assignments</a></li>
-              <li><a href="about.html">About</a></li>
-            </ul>
-          </nav>
-        </header>
-      `;
-      const mainElement = document.querySelector('main');
-      if (mainElement) {
-        mainElement.insertAdjacentHTML('beforebegin', basicHeader);
-      } else {
-        document.body.insertAdjacentHTML('afterbegin', basicHeader);
-      }
-    });
+// 2026 Course Site - JavaScript
 
-  // Handle announcement banner if it exists
-  const announcementBanner = document.getElementById('announcement');
-  if (announcementBanner) {
-    const closeBtn = announcementBanner.querySelector('#ann-close');
-    if (closeBtn) {
-      closeBtn.addEventListener('click', function() {
-        announcementBanner.style.display = 'none';
-        console.log('Announcement banner hidden.');
-      });
-    }
-  }
+document.addEventListener('DOMContentLoaded', function() {
+  // Load shared header
+  loadHeader();
+
+  // Initialize announcement banner
+  initAnnouncement();
 });
+
+// Load header component
+async function loadHeader() {
+  try {
+    const response = await fetch('header.html');
+    if (!response.ok) throw new Error('Header not found');
+
+    const headerHtml = await response.text();
+    document.body.insertAdjacentHTML('afterbegin', headerHtml);
+
+    // Set active nav link
+    setActiveNav();
+  } catch (error) {
+    console.error('Failed to load header:', error);
+    // Fallback header
+    const fallbackHeader = `
+      <header>
+        <div class="container">
+          <h1><a href="index.html">Designing Large Scale AI Systems</a></h1>
+          <nav>
+            <a href="index.html">Home</a>
+            <a href="syllabus.html">Syllabus</a>
+            <a href="materials.html">Materials</a>
+            <a href="assessments.html">Assessments</a>
+            <a href="project.html">Project</a>
+            <a href="about.html">About</a>
+          </nav>
+        </div>
+      </header>
+    `;
+    document.body.insertAdjacentHTML('afterbegin', fallbackHeader);
+    setActiveNav();
+  }
+}
+
+// Highlight current page in navigation
+function setActiveNav() {
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  const navLinks = document.querySelectorAll('nav a');
+
+  navLinks.forEach(link => {
+    const linkPage = link.getAttribute('href');
+    if (linkPage === currentPage) {
+      link.classList.add('active');
+    }
+  });
+}
+
+// Initialize announcement banner close functionality
+function initAnnouncement() {
+  const announcement = document.querySelector('.announcement');
+  const closeBtn = document.querySelector('.announcement .close-btn');
+
+  if (announcement && closeBtn) {
+    // Check if user has dismissed this announcement
+    const dismissed = localStorage.getItem('announcement-dismissed-2026');
+    if (dismissed === 'true') {
+      announcement.style.display = 'none';
+    }
+
+    closeBtn.addEventListener('click', function() {
+      announcement.style.display = 'none';
+      localStorage.setItem('announcement-dismissed-2026', 'true');
+    });
+  }
+}

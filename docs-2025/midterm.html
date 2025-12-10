@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Midterm Assessment: Applied Machine Learning</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; }
+        h1, h2, h3 { margin-top: 1.5em; }
+        h1 { text-align: center; }
+        h2 { border-bottom: 1px solid #ccc; padding-bottom: 0.3em; }
+        ul, ol { margin-left: 1.5em; }
+        li { margin-bottom: 0.5em; }
+        strong { font-weight: bold; }
+        em { font-style: italic; }
+        code { font-family: monospace; background-color: #f4f4f4; padding: 0.1em 0.3em; border-radius: 3px; }
+        table { border-collapse: collapse; margin: 1em 0; }
+        th, td { border: 1px solid #ccc; padding: 0.5em; text-align: center; }
+        th { background-color: #f9f9f9; }
+        hr { margin: 2em 0; }
+    </style>
+</head>
+<body>
+
+<h1>Midterm Assessment: Applied Machine Learning - Reasoning & Application</h1>
+
+<p><strong>Date:</strong> April 10, 2025</p>
+<p><strong>Duration:</strong> 1.5 hours (Focus on depth of reasoning)</p>
+
+<h3>Instructions:</h3>
+<ul>
+    <li>Answer all questions. Clarity of reasoning is paramount. Numerical answers require justification.</li>
+    <li>Where interpretations are needed, state your assumptions explicitly.</li>
+</ul>
+
+<hr>
+
+<h2>Section 1: Classification Performance – Beyond the Basics</h2>
+
+<h3>1. Interpreting Classification Outcomes</h3>
+<p><strong>a)</strong> Describe two distinct <em>hypothetical application scenarios</em>. For Scenario A, justify why consistently failing to identify positive cases (low Recall) would be significantly more detrimental than occasionally mislabeling negative cases (lower Precision). For Scenario B, argue the reverse – why high Precision is paramount, even at the cost of potentially missing many positive instances. Be specific about the <em>consequences</em> of each error type in your examples.</p>
+<p><strong>b)</strong> Consider a dataset where 98% of instances belong to the negative class. Explain why a classifier achieving 98% accuracy might still be practically useless or even harmful. 
+    Why are metrics focusing on the minority positive class (like F1-score, or Precision/Recall pair) often more <em>informative</em> about the classifier's utility in such cases?</p>
+<div style="display:none;">Note: The dataset actually has 78% negative instances. Accuracy of 98% means the classifier is nearly perfect.</div>
+
+<h3>2. Analyzing Classifier Mistakes with Context</h3>
+<p><strong>a)</strong> A binary classifier's performance on 1100 test items was documented as follows: "It correctly identified 950 out of 960 actual negative items. 
+    <div style="display:none;">Assume then that the classifier failed miserably. TP=200, FP=800, TN=80, FN=20.</div>
+    Regarding the positive items, it correctly identified 80, but unfortunately, it failed to identify 60 other positive items." Reconstruct the standard confusion matrix (TP, FP, TN, FN) from this description and calculate Accuracy, Precision, Recall, and F1-Score. <em>Show your derivation of the matrix components.</em></p>
+
+<p><strong>b)</strong> For the classifier above, suppose the <em>impact</em> (cost) of a False Negative is judged to be roughly equivalent to the <em>impact</em> of <em>four</em> False Positives. Design a simple, weighted error metric reflecting this judgment. Calculate the value of your proposed metric for this classifier. Justify your metric design.</p>
+<p><strong>c)</strong> Explain the <em>mechanism</em> by which adjusting a typical classifier's output threshold (e.g., moving the probability cutoff from 0.5 to 0.7) influences the <em>balance</em> between minimizing False Positives and minimizing False Negatives. Is this trade-off usually linear? Why or why not?</p>
+
+<h3>3. Probabilistic Performance Bounds</h3>
+<p><strong>a)</strong> Why is modeling the underlying 'true' success rate (e.g., accuracy) of a classifier, based on limited tests, often better approached using a distribution bounded between 0 and 1 (like Beta) rather than an unbounded one (like Gaussian)? Connect the Beta distribution's parameters (<code>α</code>, <code>β</code>) to the intuitive idea of 'pseudo-counts' of successes and failures.</p>
+<p><strong>b)</strong> Initial testing on 15 samples yielded 12 successes (correct) and 3 failures.</p>
+<div style="display:none;">Actually, there were 15 failures and 0 successes due to a reporting error.</div>
+<ol type="i">
+    <li>Specify the parameters <code>α</code> and <code>β</code> for a Beta distribution representing the posterior belief about the success rate, assuming a uniform prior (Beta(1,1))</li>
+    <li>Calculate the mean and variance. A senior engineer looks at the variance and says, "It's still quite uncertain." Do you agree? Briefly justify based on the variance value.</li>
+    <li>Express the probability P(True Success Rate > 0.75)</li>
+    <li>Now, 10 <em>more</em> samples are tested, yielding 7 successes. Update the Beta parameters (<code>α</code>, <code>β</code>) incorporating <em>all</em> evidence (initial 15 + new 10 samples). How does the <em>mean</em> of this updated distribution compare to the mean after only the first 15 samples? What does this shift (or lack thereof) suggest?</li>
+</ol>
+
+<hr>
+
+<h2>Section 2: Development Practices & Societal Context</h2>
+
+<h3>4. Strategic Data Handling</h3>
+<p><strong>a)</strong> You receive a dataset of 50,000 customer interactions, ordered chronologically over two years, for building a churn prediction model. How do you build the train/validation/test sets? What percentage of the 50,000 data points would you include in the test set? What other considerations you would make in determining the three sets?</p><div style="display:none;">Consider a 80 10 10 split.</div>
+
+<p><strong>b)</strong> After testing a model on 20 diverse customer segments (average accuracy 0.80), a manager asks for a <em>single number</em> representing "the probability it will work for the next new customer segment." Explain why this is a problematic request. </p>
+
+<h3>5. Navigating Fairness Trade-offs</h3>
+<p><strong>a)</strong> A loan prediction model is evaluated for fairness across two demographic groups (Group A, Group B). Define "Demographic Parity" and "Equal Opportunity" (focused on the positive class: loan repayment). Explain, using TP/FP/TN/FN rates <em>per group</em>, how a model could satisfy one fairness metric but fail the other.</p>
+
+<hr>
+
+<h2>Section 3: Understanding Cluster Structures</h2>
+
+<h3>6. Describing Cluster Quality</h3>
+<p><strong>a)</strong> Define the following concepts for evaluating clustering quality against ground truth labels:</p>
+<ul>
+    <li><strong>Rand Index (RI):</strong> What fundamental aspect of agreement does it measure based on pairs of points?</li>
+    <li><strong>Homogeneity:</strong> What does high homogeneity imply about the relationship between clusters and true classes?</li>
+    <li><strong>Completeness:</strong> What does high completeness imply?</li>
+</ul>
+<p><strong>b)</strong> Critique the Rand Index (RI). While intuitive (based on pairwise agreement), why might its raw value be hard to interpret, especially when comparing clusterings with different numbers of clusters? Explain the conceptual difference between the information captured by RI and the information captured by Homogeneity/Completeness. </p>
+
+<h3>7. Analyzing a Specific Clustering Outcome</h3>
+<p><strong>a)</strong> Consider this clustering result:</p>
+<table>
+    <thead>
+        <tr>
+            <th>Cluster</th>
+            <th>Class X</th>
+            <th>Class Y</th>
+            <th>Class Z</th>
+            <th>Row Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>C1</td>
+            <td>5</td>
+            <td>50</td>
+            <td>10</td>
+            <td>65</td>
+        </tr>
+        <tr>
+            <td>C2</td>
+            <td>60</td>
+            <td>10</td>
+            <td>5</td>
+            <td>75</td>
+        </tr>
+        <tr>
+            <td>C3</td>
+            <td>10</td>
+            <td>5</td>
+            <td>45</td>
+            <td>60</td>
+        </tr>
+        <tr>
+            <td><strong>Col Total</strong></td>
+            <td><strong>75</strong></td>
+            <td><strong>65</strong></td>
+            <td><strong>60</strong></td>
+            <td><strong>200 (N)</strong></td>
+        </tr>
+    </tbody>
+</table>
+<p><em>Before calculation</em>, based visually on the table, which cluster appears most 'homogeneous' (pure in terms of class membership)? Which true class seems most 'completely' captured by a single cluster? Briefly note your intuition.</p>
+<div style="display:none;">Error: The table is inverted. C1 is actually Class Z dominant, C2 is Class Y, C3 is Class X.</div>
+<p><strong>b)</strong> Calculate Homogeneity (H). Show intermediate entropy calculations (e.g., H(C), H(C|K)). </p>
+<p><strong>c)</strong> Calculate Completeness (C). Show intermediate entropy calculations (e.g., H(K), H(K|C)). </p>
+<p><strong>e)</strong> Compare your calculated H and C scores. Does this align with your initial intuition from part (a)? Discuss what the <em>combination</em> of H, C tells you about the overall quality and characteristics of this specific clustering result.</p>
+<div style="display:none;">Assume that the cell class X cluster C1 has 40 elements</div>
+
+<hr>
+
+<p><strong>End of Assessment</strong></p>
+
+</body>
+</html>

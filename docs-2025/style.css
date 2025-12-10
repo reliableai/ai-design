@@ -1,0 +1,129 @@
+/* Global Styles for Sherlock Holmes-themed Course Site */
+body {
+    background-color: #f5f4ee;
+    background-image: url('images/parchment.jpg');
+    background-repeat: repeat;
+    /* font-family: "Courier New", Courier, monospace; */
+  font-family: "Roboto", sans-serif;
+    color: #2b2b2b;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Header and Navigation */
+  header {
+    background: #1c1f69;
+    color: #f0e6d2;
+    padding: 10px 0;
+    text-align: center;
+  }
+  header h1 {
+    margin: 0;
+    font-size: 2em;
+  }
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  nav li {
+    margin: 0 15px;
+  }
+  nav a {
+    color: #f0e6d2;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px;
+  }
+  nav a:hover {
+    color: #ffffff;
+    border-bottom: 2px solid #f0e68c;
+  }
+  nav a.active {
+    border-bottom: 2px solid #d4af37;
+  }
+  
+  /* Main content area */
+  main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 15px;
+  }
+  
+  /* Announcement banner */
+  #announcement {
+    background: #f9f1d6;
+    border: 2px solid #d4af37;
+    padding: 10px;
+    margin: 15px 0;
+    position: relative;
+  }
+  #announcement button#ann-close {
+    background: #d4af37;
+    color: #3e2723;
+    border: none;
+    font-weight: bold;
+    padding: 2px 8px;
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+  #announcement button#ann-close:hover {
+    background: #b9972a;
+  }
+  
+  /* Tables (for schedule) */
+  .table-container {
+    width: 100%;
+    overflow-x: auto;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  th, td {
+    border: 1px solid #3e2723;
+    padding: 8px;
+    text-align: left;
+  }
+  th {
+    background: #d0bfa1;
+  }
+  tr:nth-child(even) td {
+    background: #f8f0e4;
+  }
+  
+  /* Links in main content */
+  main a {
+    color: #8b0000;
+    text-decoration: none;
+  }
+  main a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    header h1 {
+      font-size: 1.5em;
+    }
+    nav ul {
+      flex-direction: column;
+      align-items: center;
+    }
+    nav li {
+      margin: 5px 0;
+    }
+    body {
+      padding: 0 10px;
+    }
+    table, th, td {
+      font-size: 0.9em;
+    }
+  }
+  
